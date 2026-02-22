@@ -1,0 +1,12 @@
+# Python basura
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Datos (opcional, si los CSV son muy pesados >100MB)
+# data/raw/*.csv
+
+# Entornos virtuales
+venv/
+.env
+.venv
