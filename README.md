@@ -1,6 +1,6 @@
-## 🚦 Análisis de Accidentes de Tráfico en Madrid 2024
+## Análisis de Accidentes de Tráfico en Madrid 2024
 
-### 📌 Objetivo
+### Objetivo
 
 El objetivo principal es identificar patrones espacio-temporales y factores de riesgo (alcohol, perfiles de edad, franjas horarias) que influyen en la gravedad y frecuencia de los accidentes en la capital para apoyar la toma de decisiones en seguridad vial.
 
@@ -12,14 +12,14 @@ Además poder identificar entre otros:
 - Franja horaria recurrente por días con más accidentalidad.
 
 
-### 2) 📂 Dataset
+### 2) Dataset
 - Fuente: Archivo CSV (2024_Accidentalidad.csv)
 - Fuente oficial: Portal de Datos Abiertos del Ayuntamiento de Madrid  
 - 🔗 https://datos.madrid.es/
 - Nº filas/columnas: 49340 / 19
 - Variables clave: fecha, hora, distrito, tipo_accidente, tipo_vehiculo, tipo_persona, rango_edad, sexo, positiva_alcohol, positiva_droga
 
-### 3) ❓ Preguntas
+### 3) Preguntas
 - Q1: ¿Cómo se distribuyen los datos después de la limpieza?
 - Q2: ¿Qué características nuevas se pueden derivar?
 - Q3: ¿Qué insights se obtienen de las visualizaciones?
@@ -32,7 +32,7 @@ Además poder identificar entre otros:
 - Fechas y Horas inconsistentes → Conversión a objetos datetime y extracción de componentes (hora, día de la semana, mes).
 - Eficiencia de memoria → Conversión de columnas de texto repetitivo a tipo category (reducción de uso de memoria en >50%).
 
-### 5) 🔄 Pipeline
+### 5) Pipeline
 - raw → clean → features → viz → (export a `data/processed/`)
 
 El flujo de datos sigue un orden estrictamente secuencial:
@@ -47,7 +47,7 @@ El flujo de datos sigue un orden estrictamente secuencial:
 
 - Export: El dataset procesado se guarda en data/processed/ para modelos de ML futuros.
 
-### 6) 🔎 Hallazgos
+### 6) Hallazgos
 - Insight 1: Concentración Temporal: Los accidentes se disparan en las franjas de entrada/salida laboral (08:00 y 18:00), se concentran más entre los días jueves y viernes. Ir al gráfico: Frecuencia de accidentes por hora y dia de la semana.
 
 - Insight 2: Perfil de Riesgo: Los conductores adultos (30-59 años) presentan una mayor frecuencia de accidentes por "alcance", mientras que para los jóvenes (15-29 años) es la "colisión fronto-lateral". Ir a gráfico: Distribución de tipo de accidente por grupo etario.
@@ -68,7 +68,7 @@ La lógica se ha modularizado para evitar scripts monolíticos:
  
 - `main.py `: Orquestador que ejecuta el pipeline completo.
 
-### 8) 🛠️ Cómo ejecutar
+### 8) Cómo ejecutar
 - `pip install -r requirements.txt`
 - Ejecutar pipeline: `python3 main.py`
 - Exploración interactiva (Opcional): Puedes consultar el proceso experimental original abriendo el archivo: `notebooks/eda.ipynb`
